@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { InitService } from '../init.service';
-import { KeycloakService } from '../shared/services/keycloak.service';
+import { KeycloakServiceSingleton2 } from '../shared/keycloak-singleton2.service';
 
 @Injectable({
   providedIn: 'root'
@@ -39,7 +39,21 @@ export class AuthGuard implements CanActivate {
     //   window.location.href = 'https://keycloak-hom.mpmt.mp.br';
     //   return false;
     // }
-    console.log('Guard - usuario autenticado ? '+KeycloakService.isLoggedIn);
-    return  KeycloakService.isLoggedIn();
+    console.log('Guard - usuario autenticado ? '+KeycloakServiceSingleton2.isLoggedIn + KeycloakServiceSingleton2.isInitialized);
+    console.log(KeycloakServiceSingleton2.getToken.toString);
+
+    console.log(
+  'Guard - usuario autenticado ? ',
+  KeycloakServiceSingleton2.isLoggedIn(),
+  ' | inicializado ? ',
+  KeycloakServiceSingleton2.isInitialized()
+);
+
+console.log(
+  'Token:',
+  KeycloakServiceSingleton2.getToken()
+);
+
+    return  KeycloakServiceSingleton2.isLoggedIn();
   }
 }

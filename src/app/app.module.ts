@@ -14,11 +14,17 @@ import { LogInterceptor } from './log.interceptor';
 import { ProtegidaComponent } from './paginas/protegida.component';
 import { TesteComponent } from './paginas/teste.component';
 import { HomeComponent } from './paginas/home.component';
+import { KeycloakServiceSingleton } from './shared/keycloak-singleton.service';
 
 
 export function initApp(initService: InitService) {
   return () => initService.initialize();
 }
+
+export function initializeKeycloak(keycloakSigleton: KeycloakServiceSingleton) {
+  return () => '';//keycloakSigleton.init();
+}
+
 
 
 
@@ -40,6 +46,12 @@ export function initApp(initService: InitService) {
     provide: APP_INITIALIZER,
       useFactory: initApp,
       deps: [InitService],
+      multi: true
+  },
+  {
+     provide: APP_INITIALIZER,
+      useFactory: initializeKeycloak,
+      deps: [KeycloakServiceSingleton],
       multi: true
   },
   {

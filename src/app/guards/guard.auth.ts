@@ -3,6 +3,13 @@ import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from
 import { InitService } from '../init.service';
 import { KeycloakServiceSingleton2 } from '../shared/keycloak-singleton2.service';
 
+/*
+//Teste seu keycloak servidor de autorizações.
+//http://localhost:8080/realms/teste/.well-known/openid-configuration
+
+*/
+
+
 @Injectable({
   providedIn: 'root'
 })

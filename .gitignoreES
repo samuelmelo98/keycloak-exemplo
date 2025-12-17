@@ -1,0 +1,55 @@
+# Compilados Angular
+/dist/
+/out-tsc/
+/tmp/
+
+# Cache do Angular
+.angular/cache/
+
+# Ambiente (ex: environment.prod.ts se não quiser subir)
+src/environments/environment*.ts
+
+# IDEs
+.vscode/
+.idea/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+pnpm-lock.yaml
+
+# Logs
+*.log
+
+# Test coverage
+/coverage/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de build
+*.tgz
+*.gz
+*.zip
+
+# SSL local (Angular CLI com HTTPS)
+certs/
+*.key
+*.crt
+
+# Outros arquivos temporários
+*.swp
+*.swo
+*.bak
+
+# Arquivos gerados pelo Angular Universal (caso use SSR)
+/server.ts
+/main.server.ts
+
+# Snapshots
+*.orig
+

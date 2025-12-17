@@ -1,0 +1,20 @@
+// .vscode/launch.json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Angular in Firefox",
+      "type": "firefox",
+      "request": "launch",
+      "url": "http://localhost:4200", // Altere se a sua porta for diferente
+      "webRoot": "${workspaceFolder}",
+      // Define a versão do protocolo de depuração, importante para o Firefox
+      "pathMappings": [
+        {
+          "url": "webpack:///./src/",
+          "path": "${webRoot}/src/"
+        }
+      ]
+    }
+  ]
+}
